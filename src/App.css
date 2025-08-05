@@ -153,13 +153,13 @@ body {
   .add-todo {
     flex-direction: column; /* چینش عمودی */
     align-items: stretch;   /* کل عرض فرم رو بگیر */
+      margin-bottom: 3%;
   }
 .filters{
-  margin-bottom: 2%;
+  margin-bottom: 3%;
 }
   .add-todo input {
-    width: 100%;            /* اینپوت کل عرض رو بگیره */
-    margin-bottom: 1%;    /* فاصله پایین از دکمه */
+    width: 100%;          /* فاصله پایین از دکمه */
     box-sizing: border-box; /* اندازه شامل padding و border بشه */
   }
 
@@ -168,7 +168,6 @@ body {
     box-sizing: border-box;
   }
 }
-
   .todo-text {
     text-align: left;
     width: 100%;
