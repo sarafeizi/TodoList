@@ -8,8 +8,7 @@ body {
     url(../src/assets/14.webp),
     url(../src/assets/3.jpg),
     url(../src/assets/4.jpg),
-    url(../src/assets/20.jpg),
-    url(../src/assets/11.jpg),
+    url(../src/assets/22.jpg),
     url(../src/assets/5.jpg),
     url(../src/assets/8.jpg);
 
@@ -19,7 +18,6 @@ body {
     left bottom,
     left top,
     top right,
-    right bottom,
     center center,
     center bottom;
   background-repeat:
@@ -28,11 +26,9 @@ body {
     no-repeat,
     no-repeat,
     no-repeat,
-    no-repeat,
     no-repeat;
   background-size:
     150px 150px,
-    100px 100px,
     100px 100px,
     100px 100px,
     100px 100px,
