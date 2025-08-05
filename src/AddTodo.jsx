@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { playClickSound } from "./utils"; // import تابع
+import { playClickSound } from "./utils";  
 
 function AddTodo({ onAdd }) {
   const [text, setText] = useState("");

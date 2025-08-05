@@ -10,7 +10,7 @@ function TodoList({ todos, onToggle, onDelete, onPin }) {
           todo={todo}
           onToggle={() => onToggle(todo.id)}
           onDelete={() => onDelete(todo.id)}
-          onPin={() => onPin(todo.id)} // ✅ اضافه شد
+          onPin={() => onPin(todo.id)}  
         />
       ))}
     </ul>
