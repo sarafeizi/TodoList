@@ -1,5 +1,6 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Comic Neue", cursive !important;
+  font-style: normal;
   line-height: 1.5;
   font-weight: 400;
 
@@ -36,6 +37,7 @@ h1 {
 }
 
 button {
+    font-family: "Comic Neue", cursive !important;
   border-radius: 8px;
   padding: 0.6em 1.2em;
   font-size: 1em;

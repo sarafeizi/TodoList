@@ -80,6 +80,7 @@ body {
   font-size: 1rem;
   background-color: white;
   color: #1c1c1c;
+    font-family: "Comic Neue", cursive !important;
 }
 
 .add-todo button {
@@ -206,7 +207,7 @@ body {
 
 
 .vintage-button {
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Comic Neue', cursive !important;
   background-color: #fdf6e3;
   color: #3f3f3f;
   border: 1px solid #bfa984;
