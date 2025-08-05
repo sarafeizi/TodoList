@@ -23,18 +23,31 @@ function TodoItem({ todo, onToggle, onDelete, onPin }) {
     <li className={`todo-item ${todo.done ? "done" : ""}`}>
       <span className="todo-text">{todo.text}</span>
       <div className="left-controls">
-
-        <button onClick={handlePinClick} className="pin-btn">
+        <button
+          onClick={handlePinClick}
+          className="pin-btn"
+          title={todo.pinned ? "UnPine" : "Pine"}
+        >
           {todo.pinned ? "📌" : "📍"}
         </button>
-        <button onClick={handleDeleteClick} className="delete-btn">🗑</button>
 
-        <Checkbox
-          checked={todo.done}
-          onChange={handleCheckboxChange}
-          inputId={`todo-${todo.id}`}
-        />
+        <button
+          onClick={handleDeleteClick}
+          className="delete-btn"
+          title="Delete"
+        >
+          🗑
+        </button>
+        <span title="Done">
+          <Checkbox
+            checked={todo.done}
+            onChange={handleCheckboxChange}
+            inputId={`todo-${todo.id}`}
+          />
+        </span>
+
       </div>
+
     </li>
   );
 }
