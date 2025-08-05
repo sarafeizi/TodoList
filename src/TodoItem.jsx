@@ -6,11 +6,6 @@ function TodoItem({ todo, onToggle, onDelete, onPin }) {
 const handleCheckboxChange = (e) => {
   playClickSound();
   onToggle(e.checked);
-  if (e.checked) {
-    setTimeout(() => {
-      alert("💥 Blistering barnacles! You finished it!");
-    }, 100); // یه تأخیر کوچیک برای حس بهتر
-  }
 };
 
 
