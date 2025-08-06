@@ -15,13 +15,13 @@ function AddTodo({ onAdd }) {
 
   return (
     <form onSubmit={handleSubmit} className="add-todo">
-      <input
+       <button type="submit">Add</button>
+      <input style={{direction:"rtl"}}
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Write ..."
       />
-           <button type="submit">Add</button>
     </form>
   );
 }

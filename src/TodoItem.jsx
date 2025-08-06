@@ -1,5 +1,6 @@
 import React from "react";
 import { Checkbox } from "primereact/checkbox";
+import { confirmDialog } from "primereact/confirmdialog";
 import { playClickSound } from "./utils";
 
 function TodoItem({ todo, onToggle, onDelete, onPin }) {
@@ -8,10 +9,19 @@ function TodoItem({ todo, onToggle, onDelete, onPin }) {
     onToggle(e.checked);
   };
 
-
   const handleDeleteClick = () => {
-    playClickSound();
-    onDelete();
+    confirmDialog({
+      message: "Are you sure you want to delete this task?",
+      header: "Confirm Delete",
+      icon: "pi pi-exclamation-triangle",
+      acceptLabel: "Yes",
+      rejectLabel: "No",
+      acceptClassName: "p-button-danger",
+      accept: () => {
+        playClickSound();
+        onDelete();
+      },
+    });
   };
 
   const handlePinClick = () => {
@@ -20,24 +30,8 @@ function TodoItem({ todo, onToggle, onDelete, onPin }) {
   };
 
   return (
-    <li className={`todo-item ${todo.done ? "done" : ""}`}>
-      <span className="todo-text">{todo.text}</span>
+    <li className={`todo-item ${todo.done ? "done" : "undone"}`}>
       <div className="left-controls">
-        <button
-          onClick={handlePinClick}
-          className="pin-btn"
-          title={todo.pinned ? "UnPine" : "Pine"}
-        >
-          {todo.pinned ? "📌" : "📍"}
-        </button>
-
-        <button
-          onClick={handleDeleteClick}
-          className="delete-btn"
-          title="Delete"
-        >
-          🗑
-        </button>
         <span title="Done">
           <Checkbox
             checked={todo.done}
@@ -46,8 +40,24 @@ function TodoItem({ todo, onToggle, onDelete, onPin }) {
           />
         </span>
 
+        <button
+          onClick={handleDeleteClick}
+          className="delete-btn"
+          title="Delete"
+        >
+          🗑
+        </button>
+
+        <button
+          onClick={handlePinClick}
+          className="pin-btn"
+          title={todo.pinned ? "Unpin" : "Pin"}
+        >
+          {todo.pinned ? "📌" : "📍"}
+        </button>
       </div>
 
+      <span className="todo-text">{todo.text}</span>
     </li>
   );
 }

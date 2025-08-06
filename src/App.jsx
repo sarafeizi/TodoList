@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TodoList from "./TodoList.jsx";
 import AddTodo from "./AddTodo.jsx";
-import { playClickSound } from "./utils"; 
-
+import { playClickSound } from "./utils";
+import { ConfirmDialog } from "primereact/confirmdialog";
 import { Button } from 'primereact/button';
 
 import "./App.css";
@@ -57,18 +57,19 @@ function App() {
       if (filter === "undone") return !todo.done;
       return true;
     })
-    .sort((a, b) => b.pinned - a.pinned); 
+    .sort((a, b) => b.pinned - a.pinned);
 
   return (
     <div className="app">
+        <ConfirmDialog />
       <h1 className="title">TodoList</h1>
       <AddTodo onAdd={addTodo} />
       <div className="filters">
-        <button className="vintage-button all" onClick={() => {
+        <button className="vintage-button undone" onClick={() => {
           playClickSound();
-          setFilter("all");
+          setFilter("undone");
         }}>
-          All
+          Undone
         </button>
         <button className="vintage-button done" onClick={() => {
           playClickSound();
@@ -76,11 +77,12 @@ function App() {
         }}>
           Done
         </button>
-        <button className="vintage-button undone" onClick={() => {
+
+        <button className="vintage-button all" onClick={() => {
           playClickSound();
-          setFilter("undone");
+          setFilter("all");
         }}>
-          Undone
+          All
         </button>
       </div>
       <TodoList
