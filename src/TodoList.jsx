@@ -1,7 +1,6 @@
 import React from "react";
 import TodoItem from "./TodoItem";
-
-function TodoList({ todos, onToggle, onDelete, onPin }) {
+function TodoList({ todos, onToggle, onDelete, onPin, onEdit }) {
   return (
     <ul className="todo-list">
       {todos.map((todo) => (
@@ -10,7 +9,8 @@ function TodoList({ todos, onToggle, onDelete, onPin }) {
           todo={todo}
           onToggle={() => onToggle(todo.id)}
           onDelete={() => onDelete(todo.id)}
-          onPin={() => onPin(todo.id)}  
+          onPin={() => onPin(todo.id)}
+          onEdit={(newText) => onEdit(todo.id, newText)}
         />
       ))}
     </ul>

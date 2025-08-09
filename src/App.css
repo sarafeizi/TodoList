@@ -2,6 +2,10 @@
 @import "primereact/resources/themes/lara-light-blue/theme.css";
 @import "primereact/resources/primereact.min.css";
 @import "primeicons/primeicons.css";
+@font-face {
+  font-family: 'Samim';
+  src: url('/fonts/samim/Samim.woff') format('woff');
+}
 
 body {
   background-image:
@@ -36,8 +40,8 @@ body {
     100px 100px, ;
 }
 
-
 .app {
+  position: relative; /* اضافه کن */
   max-width: 1000px;
   width: 90vw;
   height: 80vh;
@@ -53,6 +57,24 @@ body {
   background-position: right bottom;
   background-size: 100px 100px;
 }
+
+.info-btn {
+  position: absolute; /* به جای fixed */
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #1c1c1c;
+  transition: transform 0.2s;
+  z-index: 10;
+}
+
+.info-btn:hover {
+  transform: scale(1.1);
+}
+
 
 
 #root {
@@ -171,7 +193,10 @@ body {
 
   .filters {
     margin-bottom: 3% !important;
+    display: flex;
+    justify-content: center !important;
   }
+
 
   .add-todo input {
     width: 100%;
@@ -236,4 +261,21 @@ body {
 .vintage-button.all {
   background-color: #d8eaf0;
   border-color: #8fb6c4;
+}
+.edit-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  color: #1c1c1c;
+}
+
+.edit-input {
+  flex: 1;
+  padding: 5px;
+  border: 2px solid #1c1c1c;
+  border-radius: 5px;
+  font-family: "Comic Neue", cursive !important;
+  font-size: 1rem;
 }

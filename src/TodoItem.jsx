@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Checkbox } from "primereact/checkbox";
 import { confirmDialog } from "primereact/confirmdialog";
 import { playClickSound } from "./utils";
 
-function TodoItem({ todo, onToggle, onDelete, onPin }) {
+function TodoItem({ todo, onToggle, onDelete, onPin, onEdit }) {
+  const [isEditing, setIsEditing] = useState(false);
+  const [editValue, setEditValue] = useState(todo.text);
+
   const handleCheckboxChange = (e) => {
     playClickSound();
     onToggle(e.checked);
@@ -27,6 +30,23 @@ function TodoItem({ todo, onToggle, onDelete, onPin }) {
   const handlePinClick = () => {
     playClickSound();
     onPin();
+  };
+
+  const handleEditClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleSaveEdit = () => {
+    if (editValue.trim() !== "") {
+      onEdit(editValue.trim());
+    }
+    setIsEditing(false);
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleSaveEdit();
+    }
   };
 
   return (
@@ -55,9 +75,28 @@ function TodoItem({ todo, onToggle, onDelete, onPin }) {
         >
           {todo.pinned ? "📌" : "📍"}
         </button>
+
+        <button
+          onClick={handleEditClick}
+          className="edit-btn"
+          title="Edit"
+        >
+          ✏️
+        </button>
       </div>
 
-      <span className="todo-text">{todo.text}</span>
+      {isEditing ? (
+        <input
+          className="edit-input"
+          value={editValue}
+          onChange={(e) => setEditValue(e.target.value)}
+          onBlur={handleSaveEdit}
+          onKeyDown={handleKeyDown}
+          autoFocus style={{ direction: "rtl", textAlign: "right" }}
+        />
+      ) : (
+        <span className="todo-text">{todo.text}</span>
+      )}
     </li>
   );
 }
