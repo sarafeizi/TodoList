@@ -267,9 +267,10 @@ body {
   font-size: 1rem;
 }
 
-.p-dialog .p-dialog-header-icons button {
+.p-dialog .p-dialog-header-icon {
   width: 55px !important;
 }
+
 .p-button.p-button-danger {
   background-color: #e53935 !important;
   border-color: #e53935 !important;
@@ -280,6 +281,7 @@ body {
   background-color: #c62828 !important;
   border-color: #c62828 !important;
 }
+
 @media (max-width: 600px) {
   .app {
     width: 95vw;
