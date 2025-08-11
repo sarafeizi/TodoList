@@ -2,6 +2,7 @@
 @import "primereact/resources/themes/lara-light-blue/theme.css";
 @import "primereact/resources/primereact.min.css";
 @import "primeicons/primeicons.css";
+
 @font-face {
   font-family: 'Samim';
   src: url('/fonts/samim/Samim.woff') format('woff');
@@ -14,7 +15,13 @@ body {
     url(../src/assets/4.jpg),
     url(../src/assets/22.jpg),
     url(../src/assets/5.jpg),
-    url(../src/assets/8.jpg);
+    url(../src/assets/25.jpg),
+    url(../src/assets/8.jpg),
+    url(../src/assets/6.jpg),
+    url(../src/assets/26.jpg),
+    url(../src/assets/23.jpg),
+    url(../src/assets/1.jpg),
+    url(../src/assets/2.jpg);
 
 
   background-position:
@@ -22,9 +29,22 @@ body {
     left bottom,
     left top,
     top right,
-    center center,
-    center bottom;
+    top left,
+    bottom right,
+    left bottom,
+    bottom,
+    top,
+    top right,
+    top right,
+    bottom right;
+
   background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat,
     no-repeat,
     no-repeat,
     no-repeat,
@@ -37,11 +57,18 @@ body {
     100px 100px,
     100px 100px,
     100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
+    100px 100px,
     100px 100px, ;
 }
 
 .app {
-  position: relative; /* اضافه کن */
+  position: relative;
+  /* اضافه کن */
   max-width: 1000px;
   width: 90vw;
   height: 80vh;
@@ -59,7 +86,8 @@ body {
 }
 
 .info-btn {
-  position: absolute; /* به جای fixed */
+  position: absolute;
+  /* به جای fixed */
   top: 10px;
   right: 10px;
   background: transparent;
@@ -132,18 +160,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 3px solid #c2a477; /* رنگ مشابه undone */
+  border: 3px solid #c2a477;
+  /* رنگ مشابه undone */
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: #fdf6e3; /* رنگ مشابه undone */
+  background-color: #fdf6e3;
+  /* رنگ مشابه undone */
   box-shadow: 3px 3px 0 #1c1c1c;
   transition: 0.3s;
   flex-wrap: wrap;
 }
 
 .todo-item.done {
-  background-color: #e0f2d8; /* رنگ مشابه done */
+  background-color: #e0f2d8;
+  /* رنگ مشابه done */
   border-color: #a5c49f;
 }
 
@@ -262,6 +293,7 @@ body {
   background-color: #d8eaf0;
   border-color: #8fb6c4;
 }
+
 .edit-btn {
   background: transparent;
   border: none;
