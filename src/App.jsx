@@ -80,16 +80,16 @@ function App() {
         ℹ️
       </button>
       <Dialog
-        header="درباره برنامه"
+        header="Information"
         visible={showInfo}
-        style={{ width: "350px", direction: "rtl" }}
+        style={{ width: "350px"}}
         onHide={() => setShowInfo(false)}
         breakpoints={{ "640px": "90vw" }}
         modal
       >
         <div style={{ textAlign: "right", lineHeight: "1.6", direction: "rtl", fontFamily: "'Comic Neue', cursive" }}>
           <p>
-            قابلیت‌های اصلی برنامه شامل موارد زیر است:
+            قابلیت‌های اصلی  شامل موارد زیر است:
           </p>
           <ul style={{ paddingInlineStart: "20px", margin: 0 }}>
             <li>افزودن تسک‌های جدید با دکمه "Add".</li>
