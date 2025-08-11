@@ -17,7 +17,7 @@ function App() {
     return localStorage.getItem("filter") || "all";
   });
 
-  const [showInfo, setShowInfo] = useState(false); // برای دیالوگ اینفو
+  const [showInfo, setShowInfo] = useState(false);
 
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -72,7 +72,6 @@ function App() {
     <div className="app">
       <ConfirmDialog />
 
-      {/* دکمه اینفو سمت راست بالا */}
       <button
         className="info-btn"
         onClick={() => setShowInfo(true)}
@@ -80,40 +79,38 @@ function App() {
       >
         ℹ️
       </button>
-
-      {/* دیالوگ اطلاعات برنامه */}
-<Dialog
-  header="درباره برنامه"
-  visible={showInfo}
-  style={{ width: "350px" , direction: "rtl"}}
-  onHide={() => setShowInfo(false)}
-  breakpoints={{ "640px": "90vw" }}
-  modal
->
-  <div style={{ textAlign: "right", lineHeight: "1.6", direction: "rtl", fontFamily: "'Comic Neue', cursive" }}>
-    <p>
-      قابلیت‌های اصلی برنامه شامل موارد زیر است:
-    </p>
-    <ul style={{ paddingInlineStart: "20px", margin: 0 }}>
-      <li>افزودن تسک‌های جدید با دکمه "Add".</li>
-      <li>ویرایش متن تسک‌ها با دکمه ✏️ کنار هر تسک.</li>
-      <li>علامت‌گذاری تسک‌ها به عنوان انجام شده یا نشده با چک‌باکس.</li>
-      <li>حذف تسک‌ها با دکمه 🗑.</li>
-      <li>سنجاق کردن (پین کردن) تسک‌ها برای نمایش بالاتر با دکمه 📍 / 📌.</li>
-      <li>
-        فیلتر کردن تسک‌ها با سه دکمه‌ی بالا:
-        <ul style={{ listStyleType: "disc", paddingInlineStart: "20px", marginTop: "5px" }}>
-          <li><b>Undone</b>: نمایش فقط تسک‌های انجام نشده.</li>
-          <li><b>Done</b>: نمایش فقط تسک‌های انجام شده.</li>
-          <li><b>All</b>: نمایش همه تسک‌ها.</li>
-        </ul>
-      </li>
-    </ul>
-    <p>
-      این قابلیت‌ها به شما کمک می‌کند تا تسک‌های خود را به‌راحتی مدیریت و سازماندهی کنید.
-    </p>
-  </div>
-</Dialog>
+      <Dialog
+        header="درباره برنامه"
+        visible={showInfo}
+        style={{ width: "350px", direction: "rtl" }}
+        onHide={() => setShowInfo(false)}
+        breakpoints={{ "640px": "90vw" }}
+        modal
+      >
+        <div style={{ textAlign: "right", lineHeight: "1.6", direction: "rtl", fontFamily: "'Comic Neue', cursive" }}>
+          <p>
+            قابلیت‌های اصلی برنامه شامل موارد زیر است:
+          </p>
+          <ul style={{ paddingInlineStart: "20px", margin: 0 }}>
+            <li>افزودن تسک‌های جدید با دکمه "Add".</li>
+            <li>ویرایش متن تسک‌ها با دکمه ✏️ کنار هر تسک.</li>
+            <li>علامت‌گذاری تسک‌ها به عنوان انجام شده یا نشده با چک‌باکس.</li>
+            <li>حذف تسک‌ها با دکمه 🗑.</li>
+            <li>سنجاق کردن (پین کردن) تسک‌ها برای نمایش بالاتر با دکمه 📍 / 📌.</li>
+            <li>
+              فیلتر کردن تسک‌ها با سه دکمه‌ی بالا:
+              <ul style={{ listStyleType: "disc", paddingInlineStart: "20px", marginTop: "5px" }}>
+                <li><b>Undone</b>: نمایش فقط تسک‌های انجام نشده.</li>
+                <li><b>Done</b>: نمایش فقط تسک‌های انجام شده.</li>
+                <li><b>All</b>: نمایش همه تسک‌ها.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            این قابلیت‌ها به شما کمک می‌کند تا تسک‌های خود را به‌راحتی مدیریت و سازماندهی کنید.
+          </p>
+        </div>
+      </Dialog>
 
 
       <h1 className="title">TodoList</h1>

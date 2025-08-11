@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { playClickSound } from "./utils";  
+import { playClickSound } from "./utils";
 
 function AddTodo({ onAdd }) {
   const [text, setText] = useState("");
@@ -15,8 +15,8 @@ function AddTodo({ onAdd }) {
 
   return (
     <form onSubmit={handleSubmit} className="add-todo">
-       <button type="submit">Add</button>
-      <input style={{direction:"rtl"}}
+      <button type="submit">Add</button>
+      <input style={{ direction: "rtl" }}
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}

@@ -17,6 +17,8 @@ function TodoItem({ todo, onToggle, onDelete, onPin, onEdit }) {
       message: "Are you sure you want to delete this task?",
       header: "Confirm Delete",
       icon: "pi pi-exclamation-triangle",
+      closable: true,
+      closeOnEscape: true,
       acceptLabel: "Yes",
       rejectLabel: "No",
       acceptClassName: "p-button-danger",
@@ -25,6 +27,7 @@ function TodoItem({ todo, onToggle, onDelete, onPin, onEdit }) {
         onDelete();
       },
     });
+
   };
 
   const handlePinClick = () => {
