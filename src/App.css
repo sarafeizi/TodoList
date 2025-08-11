@@ -270,7 +270,16 @@ body {
 .p-dialog .p-dialog-header-icons button {
   width: 55px !important;
 }
+.p-button.p-button-danger {
+  background-color: #e53935 !important;
+  border-color: #e53935 !important;
+  color: white !important;
+}
 
+.p-button.p-button-danger:enabled:hover {
+  background-color: #c62828 !important;
+  border-color: #c62828 !important;
+}
 @media (max-width: 600px) {
   .app {
     width: 95vw;
